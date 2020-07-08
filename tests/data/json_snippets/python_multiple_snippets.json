@@ -1,0 +1,53 @@
+{
+  "Create Pandas dataframe": {
+    "prefix": "pd_create_df",
+    "body": [
+      "df = pd.DataFrame({\"x\": [0, 1, 2, 3, 4], \"y\": [10, 11, 10, 9, 12]})"
+    ],
+    "description": "Creates Pandas dataframe"
+  },
+  "Concatenate two dataframes": {
+    "prefix": "pd_concat_df",
+    "body": [
+      "# see: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html",
+      "concatenated = pd.concat([df1, df2], axis=0)"
+    ],
+    "description": "Concatenates two dataframes along the y-axis"
+  },
+  "Mypy TypedDict": {
+    "prefix": "mypy_typeddict",
+    "body": [
+      "from typing import Optional, List, TypedDict, Union",
+      "",
+      "",
+      "class MyTypedDict(TypedDict):",
+      "    string: str",
+      "    list_of_strings: List[str]",
+      "    string_or_boolean: Union[str, bool]",
+      "    # Optional only means that None is a valid value.",
+      "    optional_key: Optional[int]",
+      "    # Check totality for arguments that can be omitted.",
+      "    # https://mypy.readthedocs.io/en/latest/more_types.html#totality",
+      "",
+      "",
+      "my_typed_dict: MyTypedDict = {",
+      "    \"string\": \"Hello\",",
+      "    \"list_of_strings\": [\"one\", \"two\", \"three\"],",
+      "    \"string_or_boolean\": True,",
+      "    \"optional_key\": None,",
+      "}"
+    ],
+    "description": "Define dictionary type with specific keys"
+  },
+  "sniptly snippet template": {
+    "prefix": "sniptly_snippet_template",
+    "body": [
+      "# -->",
+      "# name: [my awesome snippet]",
+      "# prefix: [prefix for my awesome snippet]",
+      "# description: [snippet description]",
+      "# <--"
+    ],
+    "description": "Template for creating sniptly snippets. Replace the brackets and the text within the brackets with your snippet information."
+  }
+}

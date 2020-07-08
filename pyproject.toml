@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "sniptly"
+version = "0.1.25"
+description = "Build code snippets for vscode"
+authors = ["jjaakko <devjaakko@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/jjaakko/sniptly"
+repository = "https://github.com/jjaakko/sniptly"
+keywords = ["vscode", "code snippets", "productivity"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development"
+]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^7.1.2"
+appdirs = "^1.4.4"
+jstyleson = "^0.0.2"
+rich = "^10.3.0"
+toml = "^0.10.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.1"
+black = "^21.6b0"
+pdbpp = "^0.10.2"
+pre-commit = "^2.9.3"
+mypy = "^0.902"
+pandas = "^1.2.4"
+
+[tool.poetry.scripts]
+sniptly = 'sniptly.cli:index'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+# Set default arguments for pytest
+[tool.pytest.ini_options]
+addopts = "--verbose"
+testpaths = [
+    "tests",
+]
